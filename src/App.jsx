@@ -150,30 +150,30 @@ function App() {
       <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-amber-400/15 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
 
       {/* Header */}
-      <header className="relative h-[15vh] px-8 pt-4 z-10">
-        <div className="flex items-start justify-between">
+      <header className="relative h-[12vh] lg:h-[14vh] px-4 lg:px-8 pt-2 lg:pt-4 z-10">
+        <div className="flex items-start justify-between flex-wrap gap-3">
           {/* Logo and Title */}
-          <div className="flex items-center gap-4">
-            <div className="relative">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl shadow-2xl flex items-center justify-center border-2 border-amber-300">
-                <span className="text-3xl text-white drop-shadow-lg">🕌</span>
+          <div className="flex items-center gap-3 lg:gap-4 min-w-[250px]">
+            <div className="relative flex-shrink-0">
+              <div className="w-12 h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl shadow-2xl flex items-center justify-center border-2 border-amber-300">
+                <span className="text-2xl lg:text-3xl text-white drop-shadow-lg">🕌</span>
               </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 lg:w-3 lg:h-3 bg-emerald-400 rounded-full animate-pulse"></div>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400 tracking-wide">
+            <div className="flex-1 min-w-0">
+              <h1 className="text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-400 tracking-wide truncate">
                 MASJID AL IHSAN BAKRIE PT.CPM
               </h1>
-              <p className="text-xs text-emerald-300 tracking-wider mt-0.5">BERKAH • ISTIQOMAH • BERDAYA</p>
+              <p className="text-[10px] sm:text-xs lg:text-sm text-emerald-300 tracking-wider mt-0.5 truncate">BERKAH • ISTIQOMAH • BERDAYA</p>
             </div>
           </div>
 
-          {/* Date and Time Card - Premium Gold */}
-          <div className="bg-gradient-to-br from-emerald-900/90 to-emerald-950/90 backdrop-blur-2xl rounded-3xl px-8 py-3 shadow-2xl border border-amber-500/50">
-            <div className="text-4xl font-light text-amber-300 tabular-nums drop-shadow-lg">
+          {/* Date and Time Card */}
+          <div className="bg-gradient-to-br from-emerald-900/90 to-emerald-950/90 backdrop-blur-2xl rounded-2xl lg:rounded-3xl px-4 lg:px-6 xl:px-8 py-2 lg:py-3 shadow-2xl border border-amber-500/50">
+            <div className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-light text-amber-300 tabular-nums drop-shadow-lg">
               {formatTime(currentTime)}
             </div>
-            <div className="text-sm text-emerald-200 text-right font-light mt-1">
+            <div className="text-[9px] sm:text-xs lg:text-sm text-emerald-200 text-right font-light mt-0.5 lg:mt-1">
               {getCurrentDate()}
             </div>
           </div>
@@ -181,53 +181,53 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="h-[80vh] px-8 flex gap-6 z-10 relative">
+      <main className="h-[76vh] lg:h-[78vh] xl:h-[80vh] px-3 lg:px-6 xl:px-8 flex flex-col lg:flex-row gap-3 lg:gap-5 xl:gap-6 z-10 relative">
         
-        {/* Left Column - Hadits Card (70%) */}
-        <div className="w-[70%] flex flex-col h-full">
+        {/* Left Column - Hadits Card */}
+        <div className="w-full lg:w-[70%] flex flex-col h-full">
           {/* Section Label */}
-          <div className="flex items-center gap-3 mb-3 flex-shrink-0">
-            <div className="w-1 h-5 bg-amber-500 rounded-full"></div>
-            <h2 className="text-xs font-medium tracking-[0.2em] text-amber-400 uppercase drop-shadow">
+          <div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3 flex-shrink-0">
+            <div className="w-1 h-4 lg:h-5 bg-amber-500 rounded-full"></div>
+            <h2 className="text-[10px] sm:text-xs lg:text-sm font-medium tracking-[0.2em] text-amber-400 uppercase drop-shadow">
               HADITS PILIHAN
             </h2>
             <div className="flex-1 h-px bg-gradient-to-r from-amber-500 to-transparent"></div>
             
             {/* Progress Indicator */}
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-amber-300">Next in</span>
-              <div className="w-16 h-1.5 bg-emerald-800 rounded-full overflow-hidden">
+            <div className="flex items-center gap-1 lg:gap-2">
+              <span className="text-[9px] sm:text-[10px] lg:text-xs text-amber-300">Next in</span>
+              <div className="w-12 sm:w-16 lg:w-20 h-1.5 bg-emerald-800 rounded-full overflow-hidden">
                 <div 
                   className="h-full bg-gradient-to-r from-amber-500 to-amber-600 rounded-full transition-all duration-1000"
                   style={{ width: `${(timeLeft / 15) * 100}%` }}
                 ></div>
               </div>
-              <span className="text-xs text-amber-400 font-mono font-medium">{timeLeft}s</span>
+              <span className="text-[9px] sm:text-[10px] lg:text-xs text-amber-400 font-mono font-medium">{timeLeft}s</span>
             </div>
           </div>
 
           {/* Hadits Card */}
-          <div className="flex-1 bg-gradient-to-br from-emerald-900/80 to-emerald-950/80 backdrop-blur-xl rounded-[2rem] shadow-2xl border border-amber-500/50 overflow-hidden min-h-0">
+          <div className="flex-1 bg-gradient-to-br from-emerald-900/80 to-emerald-950/80 backdrop-blur-xl rounded-2xl lg:rounded-[2rem] shadow-2xl border border-amber-500/50 overflow-hidden min-h-0">
             
             <div className="h-full flex flex-col">
-              {/* Category Badge - Premium */}
-              <div className="px-8 pt-6 flex-shrink-0">
-                <span className="inline-block px-5 py-2 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full text-amber-50 text-xs font-semibold tracking-wide shadow-xl border border-amber-400">
+              {/* Category Badge */}
+              <div className="px-4 sm:px-6 lg:px-8 pt-4 lg:pt-6 flex-shrink-0">
+                <span className="inline-block px-3 sm:px-4 lg:px-5 py-1 sm:py-1.5 lg:py-2 bg-gradient-to-r from-amber-500 to-amber-600 rounded-full text-amber-50 text-[10px] sm:text-xs lg:text-sm font-semibold tracking-wide shadow-xl border border-amber-400">
                   {hadiths[currentHadithIndex].category.toUpperCase()}
                 </span>
               </div>
 
               {/* Content */}
-              <div className="flex-1 px-8 py-5 overflow-y-auto min-h-0 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-emerald-800">
+              <div className="flex-1 px-4 sm:px-6 lg:px-8 py-4 lg:py-6 overflow-y-auto min-h-0 scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-emerald-800">
                 
                 {/* Arabic Text */}
-                <div className="text-right mb-5">
+                <div className="text-right mb-4 lg:mb-6">
                   <p className="text-amber-300 break-words drop-shadow-lg"
                      style={{ 
                        fontFamily: "'Amiri', 'Traditional Arabic', serif",
                        direction: 'rtl',
-                       fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                       lineHeight: '2.5',
+                       fontSize: 'clamp(1.8rem, 5vw, 3.5rem)',
+                       lineHeight: '2',
                        wordSpacing: '0.05em'
                      }}>
                     {hadiths[currentHadithIndex].arabic}
@@ -235,27 +235,27 @@ function App() {
                 </div>
 
                 {/* Translation */}
-                <div className="mb-4">
-                  <p className="text-base text-amber-200/90 leading-relaxed border-l-4 border-amber-500 pl-4 italic">
+                <div className="mb-4 lg:mb-6">
+                  <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-amber-200/90 leading-relaxed border-l-3 sm:border-l-4 border-amber-500 pl-3 sm:pl-4 lg:pl-5 italic font-medium">
                     "{hadiths[currentHadithIndex].translation}"
                   </p>
                 </div>
 
                 {/* Source & Pagination */}
-                <div className="mt-auto flex items-center justify-between">
-                  <span className="text-sm text-amber-400 bg-emerald-800/50 px-4 py-2 rounded-full border border-amber-500/30">
+                <div className="mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <span className="text-[10px] sm:text-xs lg:text-sm text-amber-400 bg-emerald-800/50 px-2 sm:px-3 lg:px-4 py-1 sm:py-1.5 lg:py-2 rounded-full border border-amber-500/30">
                     {hadiths[currentHadithIndex].source}
                   </span>
                   
-                  {/* Pagination Dots - Gold */}
-                  <div className="flex items-center gap-2">
+                  {/* Pagination Dots */}
+                  <div className="flex items-center gap-1 sm:gap-1.5 lg:gap-2 flex-wrap">
                     {hadiths.map((_, index) => (
                       <button
                         key={index}
                         className={`rounded-full transition-all duration-500 ${
                           index === currentHadithIndex 
-                            ? 'w-8 h-2 bg-gradient-to-r from-amber-500 to-amber-600 shadow-md' 
-                            : 'w-2 h-2 bg-emerald-700 hover:bg-amber-600'
+                            ? 'w-4 sm:w-5 lg:w-6 xl:w-8 h-1.5 sm:h-2 bg-gradient-to-r from-amber-500 to-amber-600 shadow-md' 
+                            : 'w-1.5 sm:w-2 h-1.5 sm:h-2 bg-emerald-700 hover:bg-amber-600'
                         }`}
                         onClick={() => {
                           setCurrentHadithIndex(index);
@@ -270,117 +270,107 @@ function App() {
           </div>
         </div>
 
-        {/* Right Column - Info & Finance (30%) */}
-        <div className="w-[30%] flex flex-col gap-4 h-full">
+        {/* Right Column - Info & Finance */}
+        <div className="w-full lg:w-[30%] flex flex-col gap-3 lg:gap-4 h-auto lg:h-full">
           
-          {/* Quick Info Card - Premium */}
-          <div className="bg-gradient-to-br from-emerald-900/80 to-emerald-950/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-amber-500/50 p-5 flex-shrink-0">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-7 h-7 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center shadow-lg">
-                <span className="text-sm text-white">📊</span>
+          {/* Quick Info Card */}
+          <div className="bg-gradient-to-br from-emerald-900/80 to-emerald-950/80 backdrop-blur-xl rounded-xl lg:rounded-2xl shadow-2xl border border-amber-500/50 p-3 lg:p-4 xl:p-5 flex-shrink-0">
+            <div className="flex items-center gap-2 lg:gap-3 mb-2 lg:mb-3 xl:mb-4">
+              <div className="w-6 h-6 lg:w-7 lg:h-7 bg-gradient-to-br from-amber-500 to-amber-600 rounded-xl flex items-center justify-center shadow-lg">
+                <span className="text-xs lg:text-sm text-white">📊</span>
               </div>
-              <h3 className="text-xs font-semibold text-amber-300 uppercase tracking-wider">
+              <h3 className="text-[10px] sm:text-xs lg:text-sm font-semibold text-amber-300 uppercase tracking-wider">
                 Informasi Masjid
               </h3>
             </div>
             
-            <div className="space-y-3">
-              <div className="flex justify-between items-center text-xs">
+            <div className="space-y-2 lg:space-y-3">
+              <div className="flex justify-between items-center text-[10px] sm:text-xs lg:text-sm">
                 <span className="text-emerald-200">Jumlah Hadits</span>
-                <span className="text-amber-300 font-bold text-sm">{hadiths.length}</span>
+                <span className="text-amber-300 font-bold text-xs sm:text-sm lg:text-base">{hadiths.length}</span>
               </div>
-              <div className="flex justify-between items-center text-xs">
+              <div className="flex justify-between items-center text-[10px] sm:text-xs lg:text-sm">
                 <span className="text-emerald-200">Rotasi</span>
-                <span className="text-amber-300 font-bold text-sm">15 detik</span>
+                <span className="text-amber-300 font-bold text-xs sm:text-sm lg:text-base">15 detik</span>
               </div>
-              <div className="flex justify-between items-center text-xs">
+              <div className="flex justify-between items-center text-[10px] sm:text-xs lg:text-sm">
                 <span className="text-emerald-200">Status</span>
-                <span className="text-amber-300 font-bold text-sm flex items-center gap-2">
-                  <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                <span className="text-amber-300 font-bold text-xs sm:text-sm lg:text-base flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-400 rounded-full animate-pulse"></span>
                   Aktif
                 </span>
               </div>
             </div>
           </div>
 
-          {/* Finance Card - Premium Green & Gold */}
-          <div className="flex-1 bg-gradient-to-br from-emerald-900/80 to-emerald-950/80 backdrop-blur-xl rounded-2xl shadow-2xl border border-amber-500/50 overflow-hidden min-h-0 flex flex-col">
+          {/* Finance Card - Dengan font lebih besar */}
+          <div className="flex-1 bg-gradient-to-br from-emerald-900/80 to-emerald-950/80 backdrop-blur-xl rounded-xl lg:rounded-2xl shadow-2xl border border-amber-500/50 overflow-hidden flex flex-col">
             
             {/* Card Header */}
-            <div className="bg-gradient-to-r from-amber-600 to-amber-700 px-5 py-4 border-b border-amber-500/50 flex-shrink-0">
-              <div className="flex items-center gap-3">
-                <div className="w-7 h-7 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg">
-                  <span className="text-sm text-white">💰</span>
+            <div className="bg-gradient-to-r from-amber-600 to-amber-700 px-3 lg:px-4 xl:px-5 py-2 lg:py-3 xl:py-4 border-b border-amber-500/50 flex-shrink-0">
+              <div className="flex items-center gap-2 lg:gap-3">
+                <div className="w-6 h-6 lg:w-7 lg:h-7 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <span className="text-xs lg:text-sm text-white">💰</span>
                 </div>
                 <div>
-                  <h3 className="text-xs font-semibold text-amber-100 uppercase tracking-wider">
+                  <h3 className="text-sm sm:text-base lg:text-lg font-semibold text-amber-100 uppercase tracking-wider">
                     Kas Masjid
                   </h3>
-                  <p className="text-xs text-amber-200 font-light">Hari ini</p>
+                  <p className="text-[10px] sm:text-xs lg:text-sm text-amber-200 font-light">Hari ini</p>
                 </div>
               </div>
             </div>
 
-            {/* Card Content */}
-            <div className="flex-1 p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-emerald-800">
-              <div className="mb-4">
-                <p className="text-3xl font-bold text-amber-300 mb-2 drop-shadow-lg">
+            {/* Card Content - Dengan saldo yang lebih besar */}
+            <div className="flex-1 p-3 lg:p-4 xl:p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-emerald-800">
+              <div className="mb-3 lg:mb-4">
+                <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-amber-300 mb-1 lg:mb-2 drop-shadow-lg">
                   {formatRupiah(saldoMasjid)}
                 </p>
-                <p className="text-xs text-emerald-200 font-light">
+                <p className="text-xs sm:text-sm lg:text-base text-emerald-200 font-light">
                   Total saldo tersedia
                 </p>
               </div>
 
-              {/* Stats - Enhanced */}
-              <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-emerald-800/50 rounded-xl p-3 border border-amber-500/30">
-                  <p className="text-xs text-emerald-200 font-light">Pemasukan</p>
-                  <p className="text-sm text-amber-300 font-bold mt-1">+10.5%</p>
+              {/* Stats - Diperbesar */}
+              <div className="grid grid-cols-2 gap-2 lg:gap-3 mb-3 lg:mb-4">
+                <div className="bg-emerald-800/50 rounded-lg lg:rounded-xl p-2 lg:p-3 border border-amber-500/30">
+                  <p className="text-xs sm:text-sm lg:text-base text-emerald-200 font-light">Pemasukan</p>
+                  <p className="text-sm sm:text-base lg:text-lg text-amber-300 font-bold mt-0.5 lg:mt-1">+10.5%</p>
                 </div>
-                <div className="bg-emerald-800/50 rounded-xl p-3 border border-amber-500/30">
-                  <p className="text-xs text-emerald-200 font-light">Pengeluaran</p>
-                  <p className="text-sm text-amber-300 font-bold mt-1">-5.3%</p>
+                <div className="bg-emerald-800/50 rounded-lg lg:rounded-xl p-2 lg:p-3 border border-amber-500/30">
+                  <p className="text-xs sm:text-sm lg:text-base text-emerald-200 font-light">Pengeluaran</p>
+                  <p className="text-sm sm:text-base lg:text-lg text-amber-300 font-bold mt-0.5 lg:mt-1">-5.3%</p>
                 </div>
               </div>
 
-              {/* Progress Bar - Premium */}
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs">
+              {/* Progress Bar */}
+              <div className="space-y-1 lg:space-y-2">
+                <div className="flex justify-between text-xs sm:text-sm lg:text-base">
                   <span className="text-emerald-200 font-light">Target Infaq</span>
                   <span className="text-amber-300 font-bold">78%</span>
                 </div>
-                <div className="w-full h-2.5 bg-emerald-800 rounded-full overflow-hidden">
+                <div className="w-full h-2.5 sm:h-3 bg-emerald-800 rounded-full overflow-hidden">
                   <div className="w-[78%] h-full bg-gradient-to-r from-amber-500 to-amber-600 rounded-full shadow-lg shadow-amber-500/50"></div>
                 </div>
-              </div>
-
-              {/* Islamic Quote - Elegant */}
-              <div className="mt-5 pt-4 border-t border-amber-500/30">
-                <p className="text-xs text-amber-200 italic text-center leading-relaxed">
-                  "Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lain"
-                </p>
-                <p className="text-[10px] text-amber-300 text-center mt-2 font-arabic" style={{fontFamily: "'Amiri', serif"}}>
-                  خَيْرُ النَّاسِ أَنْفَعُهُمْ لِلنَّاسِ
-                </p>
               </div>
             </div>
           </div>
         </div>
       </main>
 
-      {/* Footer - Enhanced Green & Gold */}
-      <footer className="absolute bottom-0 left-0 right-0 bg-gradient-to-r from-emerald-950 to-emerald-900 border-t border-amber-500/50 py-3 z-10">
-        <div className="px-8 flex items-center justify-between text-xs">
-          <p className="text-amber-300">
+      {/* Footer */}
+      <footer className="mt-1 relative bg-gradient-to-r from-emerald-950 to-emerald-900 border-t border-amber-500/50 py-2 lg:py-3 z-10">
+        <div className="px-3 lg:px-6 xl:px-8 flex items-center justify-between text-[8px] sm:text-[9px] lg:text-xs">
+          <p className="text-amber-300 truncate">
             © 2026 Masjid Al Ihsan Bakrie PT.CPM
           </p>
-          <div className="flex items-center gap-2">
-            <span className="w-1 h-1 bg-amber-400 rounded-full"></span>
-            <p className="text-amber-400 font-bold tracking-wide">
+          <div className="flex items-center gap-1 lg:gap-2 flex-shrink-0">
+            <span className="w-0.5 h-0.5 bg-amber-400 rounded-full"></span>
+            <p className="text-amber-400 font-bold tracking-wide text-[8px] sm:text-[9px] lg:text-xs">
               Team ITE CPM
             </p>
-            <span className="w-1 h-1 bg-amber-400 rounded-full"></span>
+            <span className="w-0.5 h-0.5 bg-amber-400 rounded-full"></span>
           </div>
         </div>
       </footer>
