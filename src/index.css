@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.amiri-font {
+  font-family: 'Amiri', serif;
+}
+
+.traditional-arabic {
+  font-family: 'Traditional Arabic', serif;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Shadow Utilities */
+.shadow-3xl {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.shadow-4xl {
+  box-shadow: 0 35px 70px -12px rgba(0, 0, 0, 0.35);
+}
