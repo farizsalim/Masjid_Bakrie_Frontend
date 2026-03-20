@@ -234,9 +234,9 @@ function App() {
                   </p>
                 </div>
 
-                {/* Translation */}
+                {/* Translation - Diperbesar tanpa bold */}
                 <div className="mb-4 lg:mb-6">
-                  <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-amber-200/90 leading-relaxed border-l-3 sm:border-l-4 border-amber-500 pl-3 sm:pl-4 lg:pl-5 italic font-medium">
+                  <p className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-amber-200/90 leading-relaxed border-l-3 sm:border-l-4 border-amber-500 pl-3 sm:pl-4 lg:pl-5 italic font-normal">
                     "{hadiths[currentHadithIndex].translation}"
                   </p>
                 </div>
@@ -303,7 +303,7 @@ function App() {
             </div>
           </div>
 
-          {/* Finance Card - Dengan font lebih besar */}
+          {/* Finance Card */}
           <div className="flex-1 bg-gradient-to-br from-emerald-900/80 to-emerald-950/80 backdrop-blur-xl rounded-xl lg:rounded-2xl shadow-2xl border border-amber-500/50 overflow-hidden flex flex-col">
             
             {/* Card Header */}
@@ -321,7 +321,7 @@ function App() {
               </div>
             </div>
 
-            {/* Card Content - Dengan saldo yang lebih besar */}
+            {/* Card Content */}
             <div className="flex-1 p-3 lg:p-4 xl:p-5 overflow-y-auto scrollbar-thin scrollbar-thumb-amber-500 scrollbar-track-emerald-800">
               <div className="mb-3 lg:mb-4">
                 <p className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-amber-300 mb-1 lg:mb-2 drop-shadow-lg">
@@ -332,7 +332,7 @@ function App() {
                 </p>
               </div>
 
-              {/* Stats - Diperbesar */}
+              {/* Stats */}
               <div className="grid grid-cols-2 gap-2 lg:gap-3 mb-3 lg:mb-4">
                 <div className="bg-emerald-800/50 rounded-lg lg:rounded-xl p-2 lg:p-3 border border-amber-500/30">
                   <p className="text-xs sm:text-sm lg:text-base text-emerald-200 font-light">Pemasukan</p>
